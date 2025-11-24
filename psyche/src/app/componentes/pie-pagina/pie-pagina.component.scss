@@ -1,0 +1,77 @@
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 3rem 1rem 1rem;
+    margin-top: 4rem;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.columna-footer {
+    h3 {
+        font-family: var(--font-body);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--color-secundario);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+
+            a {
+                color: var(--color-blanco);
+                text-decoration: none;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--color-secundario);
+                }
+            }
+        }
+    }
+}
+
+.marca {
+    .titulo-elegante {
+        font-size: 2.5rem;
+        margin: 0;
+        color: var(--color-blanco); // Sobrescribe el color primario por defecto
+    }
+
+    .subtitulo {
+        font-size: 1.1rem;
+        color: var(--color-secundario);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .descripcion {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
