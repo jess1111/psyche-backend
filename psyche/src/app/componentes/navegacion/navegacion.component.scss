@@ -1,86 +1,175 @@
+/* --- Variables (Asegúrate de tenerlas o usa los códigos directos) --- */
+$color-primario: #008080;
+$color-secundario: #5EDBC8;
+$color-texto: #343A40;
+$color-blanco: #ffffff;
+$fuente-elegante: 'Dancing Script', cursive;
+
+/* 1. ESTILOS DE LA BARRA SUPERIOR (TOP BAR) */
+.top-bar {
+  background-color: $color-primario;
+  color: $color-blanco;
+  font-size: 0.85rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contenedor-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* En móviles, ocultamos el horario para que no se sature */
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    .info-horario {
+      display: none;
+    }
+  }
+}
+
+.info-contacto span,
+.info-horario span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.separador {
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+/* 2. ESTILOS DEL NAVBAR PRINCIPAL */
 .navbar {
-  background-color: var(--color-blanco);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.98);
+  /* Casi opaco */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  /* Sombra suave */
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 0.8rem 0;
+  backdrop-filter: blur(10px);
+  /* Efecto vidrio moderno */
 }
 
 .contenedor-navbar {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* LOGO */
 .logo {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1;
+  cursor: pointer;
 
   .titulo-elegante {
-    font-size: 3rem;
-    margin: 0;
-    text-decoration: none;
-    color: var(--color-primario);
+    font-family: $fuente-elegante;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-primario;
   }
 
   .subtitulo {
-    font-size: 0.85rem;
-    color: var(--color-secundario);
+    font-size: 0.65rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 500;
+    color: lighten($color-texto, 20%);
+    margin-top: 5px;
   }
 }
 
+/* MENÚ */
 .menu {
   display: flex;
-  gap: 2rem;
+  gap: 30px;
   align-items: center;
 
   a {
     text-decoration: none;
-    color: var(--color-texto-principal);
+    color: $color-texto;
     font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
     position: relative;
 
-    &:hover,
-    &.activo {
-      color: var(--color-primario);
-    }
-
-    &.activo::after {
+    /* Efecto hover: línea verde abajo */
+    &::after {
       content: '';
       position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
-      background-color: var(--color-secundario);
+      bottom: -4px;
+      left: 0;
+      background-color: $color-secundario;
+      transition: width 0.3s;
+    }
+
+    &:hover {
+      color: $color-primario;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    /* Clase activa que pone Angular automáticamente */
+    &.activo {
+      color: $color-primario;
+      font-weight: 600;
+
+      &::after {
+        width: 100%;
+      }
     }
   }
 
-  .boton-contacto {
-    background-color: var(--color-primario);
-    color: var(--color-blanco) !important;
-    padding: 0.5rem 1.5rem;
+  /* ESTILO ESPECIAL PARA EL BOTÓN (CTA) */
+  .boton-cita {
+    background-color: $color-primario;
+    color: $color-blanco !important;
+    /* Forzar blanco */
+    padding: 10px 25px;
     border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 128, 128, 0.2);
 
-    &:hover {
-      background-color: var(--color-secundario);
-      color: var(--color-primario) !important;
-      transform: translateY(-2px);
+    /* Quitamos la línea de hover del botón */
+    &::after {
+      display: none;
     }
 
-    &.activo::after {
-      display: none; // No subrayado para el botón
+    &:hover {
+      background-color: darken($color-primario, 5%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 128, 128, 0.3);
+    }
+
+    &.activo-boton {
+      background-color: darken($color-primario, 10%);
+    }
+  }
+}
+
+/* Responsive básico para que no se rompa en pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu {
+    gap: 15px;
+
+    a:not(.boton-cita) {
+      display: none;
+      /* Ocultamos enlaces, aquí iría un menú hamburguesa luego */
     }
   }
 }
