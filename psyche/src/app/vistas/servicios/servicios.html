@@ -1,0 +1,38 @@
+<div class="pagina-servicios">
+    <!-- Hero Section -->
+    <section class="hero-servicios">
+        <div class="contenido-hero">
+            <h1>Nuestros Servicios</h1>
+            <p>Terapia profesional adaptada a tus necesidades</p>
+        </div>
+    </section>
+
+    <div class="contenedor-principal">
+        <!-- Grid de Servicios -->
+        <div class="grid-servicios">
+            <div class="tarjeta-servicio" *ngFor="let servicio of servicios">
+                <div class="icono-servicio">{{ servicio.icono }}</div>
+                <h2>{{ servicio.titulo }}</h2>
+                <p class="descripcion">{{ servicio.descripcion }}</p>
+
+                <div class="beneficios">
+                    <h3>Beneficios:</h3>
+                    <ul>
+                        <li *ngFor="let beneficio of servicio.beneficios">
+                            <span class="check">✓</span> {{ beneficio }}
+                        </li>
+                    </ul>
+                </div>
+
+                <a routerLink="/contacto" class="btn-agendar">Agendar Cita</a>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <section class="cta-servicios">
+            <h2>¿No estás seguro cuál servicio necesitas?</h2>
+            <p>Contáctanos y te ayudaremos a encontrar la mejor opción para ti.</p>
+            <a routerLink="/contacto" class="btn-contacto">Hablar con un Especialista</a>
+        </section>
+    </div>
+</div>

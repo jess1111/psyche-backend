@@ -1,4 +1,82 @@
-<section class="seccion-hero">
-    <h1>Bienvenido a Psyché</h1>
-    <p>Tu espacio de bienestar emocional.</p>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="contenido-hero">
+        <h1 class="titulo-elegante">Tu espacio de bienestar emocional</h1>
+        <p class="subtitulo">Acompañándote en el camino hacia tu mejor versión.</p>
+        <a routerLink="/contacto" class="boton-cta" hre>Agenda tu Cita</a>
+    </div>
+</section>
+
+<!-- Sección de Confianza / Sobre Nosotros -->
+<section class="seccion confianza">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Un espacio seguro para ti</h2>
+        <p class="texto-destacado">
+            En <strong>Psyché</strong>, entendemos que dar el primer paso no es fácil.
+            Te ofrecemos un ambiente confidencial, empático y profesional donde podrás
+            explorar tus emociones y encontrar las herramientas para tu crecimiento personal.
+        </p>
+    </div>
+</section>
+
+<!-- Sección de Servicios Destacados -->
+<section class="seccion servicios">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Nuestros Servicios</h2>
+        <div class="grid-servicios">
+
+            <!-- Servicio 1 -->
+            <div class="tarjeta-servicio">
+                <div class="icono">👤</div>
+                <h3>Terapia Individual</h3>
+                <p>Espacio personal para trabajar ansiedad, depresión, autoestima y crecimiento personal.</p>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="tarjeta-servicio">
+                <div class="icono">💞</div>
+                <h3>Terapia de Pareja</h3>
+                <p>Mejora la comunicación, resuelve conflictos y fortalece el vínculo afectivo.</p>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="tarjeta-servicio">
+                <div class="icono">👨‍👩‍👧‍👦</div>
+                <h3>Terapia Familiar</h3>
+                <p>Abordaje de dinámicas familiares para mejorar la convivencia y el entendimiento.</p>
+            </div>
+
+        </div>
+        <div class="ver-mas">
+            <a routerLink="/servicios" class="enlace-texto">Ver todos los servicios &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Modalidad -->
+<section class="seccion modalidad">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Modalidades de Atención</h2>
+        <div class="grid-modalidad">
+            <div class="item-modalidad">
+                <span class="icono-grande">💻</span>
+                <h3>Online</h3>
+                <p>Desde la comodidad de tu hogar, sin traslados.</p>
+            </div>
+            <div class="item-modalidad">
+                <span class="icono-grande">🏢</span>
+                <h3>Presencial</h3>
+                <p>En nuestro consultorio acogedor y privado.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-final">
+    <div class="contenedor">
+        <h2>¿Listo para priorizar tu salud mental?</h2>
+        <p>Estamos aquí para escucharte.</p>
+        <a routerLink="../contacto" routerLinkActive="activo" class="boton-cta">Contáctanos Hoy</a>
+    </div>
 </section>

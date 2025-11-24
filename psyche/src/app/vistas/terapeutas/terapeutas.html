@@ -1,0 +1,50 @@
+<div class="pagina-terapeutas">
+    <!-- Hero Section -->
+    <section class="hero-terapeutas">
+        <div class="contenido-hero">
+            <h1>Nuestro Equipo</h1>
+            <p>Profesionales comprometidos con tu bienestar emocional</p>
+        </div>
+    </section>
+
+    <div class="contenedor-principal">
+        <!-- Introducción -->
+        <section class="intro">
+            <h2>Conoce a Nuestros Especialistas</h2>
+            <p>
+                Nuestro equipo está formado por profesionales altamente capacitados y con amplia experiencia
+                en diferentes áreas de la psicología. Cada terapeuta está comprometido con brindarte un
+                espacio seguro, confidencial y empático para tu proceso de crecimiento personal.
+            </p>
+        </section>
+
+        <!-- Grid de Terapeutas -->
+        <div class="grid-terapeutas">
+            <div class="tarjeta-terapeuta" *ngFor="let terapeuta of terapeutas">
+                <div class="foto-placeholder">
+                    <span class="icono-persona">👤</span>
+                </div>
+
+                <div class="info-terapeuta">
+                    <h3>{{ terapeuta.nombre }}</h3>
+                    <p class="especialidad">{{ terapeuta.especialidad }}</p>
+                    <p class="descripcion">{{ terapeuta.descripcion }}</p>
+
+                    <div class="areas">
+                        <h4>Áreas de Especialización:</h4>
+                        <div class="tags">
+                            <span class="tag" *ngFor="let area of terapeuta.areas">{{ area }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <section class="cta-terapeutas">
+            <h2>¿Listo para comenzar tu proceso terapéutico?</h2>
+            <p>Agenda una cita con el especialista que mejor se adapte a tus necesidades.</p>
+            <a routerLink="/contacto" class="btn-agendar">Agendar Cita Ahora</a>
+        </section>
+    </div>
+</div>

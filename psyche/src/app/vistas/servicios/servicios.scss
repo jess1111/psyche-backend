@@ -1,0 +1,179 @@
+.pagina-servicios {
+    min-height: 100vh;
+    background-color: #f9fbfb;
+}
+
+.hero-servicios {
+    background: linear-gradient(135deg, #008080 0%, #5EDBC8 100%);
+    color: white;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #5EDBC8;
+    }
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        opacity: 0.95;
+    }
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.tarjeta-servicio {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 128, 128, 0.15);
+        border-color: #5EDBC8;
+    }
+
+    .icono-servicio {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    h2 {
+        color: #008080;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .descripcion {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .beneficios {
+        margin-bottom: 2rem;
+
+        h3 {
+            color: #008080;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding: 0.5rem 0;
+                color: #555;
+                display: flex;
+                align-items: flex-start;
+                gap: 0.5rem;
+
+                .check {
+                    color: #5EDBC8;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .btn-agendar {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background-color: #008080;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #006666;
+            transform: scale(1.02);
+        }
+    }
+}
+
+.cta-servicios {
+    background: linear-gradient(135deg, #008080 0%, #5EDBC8 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 3rem;
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+    }
+
+    .btn-contacto {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background-color: white;
+        color: #008080;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-servicios h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid-servicios {
+        grid-template-columns: 1fr;
+    }
+}

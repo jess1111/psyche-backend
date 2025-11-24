@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pie-pagina.component.html',
-//  styleUrl: './pie-pagina.component.css' // O .scss si lo tienes
+  styleUrl: './pie-pagina.component.scss' // O .scss si lo tienes
 })
 export class PiePaginaComponent { // Nombre estándar con 'Component' al final
   // Lógica del footer

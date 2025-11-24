@@ -1,0 +1,189 @@
+.pagina-terapeutas {
+    min-height: 100vh;
+    background-color: #f9fbfb;
+}
+
+.hero-terapeutas {
+    background: linear-gradient(135deg, #008080 0%, #5EDBC8 100%);
+    color: white;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #5EDBC8;
+    }
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        opacity: 0.95;
+    }
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+        color: #008080;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+}
+
+.grid-terapeutas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.tarjeta-terapeuta {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 128, 128, 0.15);
+    }
+
+    .foto-placeholder {
+        background: linear-gradient(135deg, #008080 0%, #5EDBC8 100%);
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icono-persona {
+            font-size: 8rem;
+            opacity: 0.3;
+        }
+    }
+
+    .info-terapeuta {
+        padding: 2rem;
+
+        h3 {
+            color: #008080;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .especialidad {
+            color: #5EDBC8;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .descripcion {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .areas {
+            h4 {
+                color: #008080;
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+                font-weight: 600;
+            }
+
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                .tag {
+                    background-color: rgba(94, 219, 200, 0.2);
+                    color: #008080;
+                    padding: 0.4rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.cta-terapeutas {
+    background: linear-gradient(135deg, #008080 0%, #5EDBC8 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 3rem;
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+    }
+
+    .btn-agendar {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background-color: white;
+        color: #008080;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-terapeutas h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid-terapeutas {
+        grid-template-columns: 1fr;
+    }
+}

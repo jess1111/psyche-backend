@@ -1,0 +1,112 @@
+<div class="pagina-contacto">
+    <!-- Hero Section -->
+    <section class="hero-contacto">
+        <div class="contenido-hero">
+            <h1>Agenda tu Cita</h1>
+            <p>Da el primer paso hacia tu bienestar emocional.</p>
+        </div>
+    </section>
+
+    <div class="contenedor-principal">
+        <div class="grid-contacto">
+            <!-- Información de Contacto -->
+            <div class="info-contacto">
+                <h2>Información de Contacto</h2>
+                <p class="intro">Estamos aquí para escucharte. Puedes contactarnos por cualquiera de estos medios o
+                    llenar el formulario.</p>
+
+                <div class="datos">
+                    <div class="item-dato">
+                        <span class="icono">📍</span>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Calle Osa Menor no. 20, Los Jardines del Norte, DN, Rep. Dom.</p>
+                        </div>
+                    </div>
+
+                    <div class="item-dato">
+                        <span class="icono">📧</span>
+                        <div>
+                            <h3>Email</h3>
+                            <p>psychebienestar@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="item-dato">
+                        <span class="icono">📱</span>
+                        <div>
+                            <h3>Teléfono / WhatsApp</h3>
+                            <p>(849) 373-1001</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mapa-container">
+                    <!-- Google Maps Embed -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0!2d-69.9!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMwJzAwLjAiTiA2OcKwNTQnMDAuMCJX!5e0!3m2!1ses!2sdo!4v1234567890"
+                        width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="formulario-seccion">
+                <div class="tarjeta-formulario">
+                    <h2>Envíanos un Mensaje</h2>
+
+                    <form [formGroup]="formularioContacto" (ngSubmit)="enviarFormulario()">
+                        <div class="campo">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre">
+                            <div class="error"
+                                *ngIf="formularioContacto.get('nombre')?.invalid && formularioContacto.get('nombre')?.touched">
+                                El nombre es requerido (mínimo 3 caracteres).
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" formControlName="email" placeholder="tucorreo@ejemplo.com">
+                            <div class="error"
+                                *ngIf="formularioContacto.get('email')?.invalid && formularioContacto.get('email')?.touched">
+                                Ingresa un correo válido.
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" formControlName="telefono" placeholder="Ej: 8091234567">
+                            <div class="error"
+                                *ngIf="formularioContacto.get('telefono')?.invalid && formularioContacto.get('telefono')?.touched">
+                                Ingresa un teléfono válido (10 dígitos).
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="tipoCita">Modalidad de Preferencia</label>
+                            <select id="tipoCita" formControlName="tipoCita">
+                                <option value="online">Online (Virtual)</option>
+                                <option value="presencial">Presencial</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensaje">Mensaje (Opcional)</label>
+                            <textarea id="mensaje" formControlName="mensaje" rows="4"
+                                placeholder="¿Cómo podemos ayudarte?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-enviar" [disabled]="formularioContacto.invalid">Agendar
+                            Cita</button>
+
+                        <div class="mensaje-exito" *ngIf="mensajeEnviado">
+                            ¡Gracias! Tu mensaje ha sido enviado. Nos pondremos en contacto pronto.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
